@@ -26,7 +26,7 @@ SECRET_KEY = 'jd7hz9497ryxdl*52orb()s+uzf*rhrgbblf+5f=67!_+s=a)z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ajp-todo.herokuapp.com']
 
 
 # Application definition
