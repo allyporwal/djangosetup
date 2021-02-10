@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'jd7hz9497ryxdl*52orb()s+uzf*rhrgbblf+5f=67!_+s=a)z'
+SECRET_KEY = os.environ.get('SEVRET_KEY', 'jd7hz9497ryxdl*52orb()s+uzf*rhrgbblf+5f=67!_+s=a)z')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,8 +83,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://zbwqgrqghyciso:629f9f4933ea387dde3ef2df3ec69f8fed82dbca0a736fa14e7ac38a42fdfed7@ec2-54-220-35-19.eu-west-1.compute.amazonaws.com:5432/d8nc2sqo1sb27c')
-}
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
